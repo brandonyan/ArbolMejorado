@@ -1,3 +1,6 @@
+from Pila import *
+import re
+
 class Nodo():
     def __init__(self, valor, izq=None, der=None):
         self.valor=valor
@@ -23,7 +26,7 @@ def evaluar(arbol):
 
 
     
-from Pila import *
+
 def inicio():
     
     pila=Pila()
@@ -32,11 +35,13 @@ def inicio():
 
     print("ingrese vacio para Terminar")
     while True:
-        m=input("ingreso en post-orden:").split(" ")
+        m=raw_input("ingreso en post-orden:").split(" ")
         k=len(m)
+        if(k<2):
+            break;
         
-            
         for j in range(0, k):
+            #realiar en cada entrada validadn si hay o no match de no hacerlo explicar donde entro el valor equibocado 
             y=m[j]           
 
             if(y=="="):
@@ -80,8 +85,6 @@ def inicio():
             
 
     print(pila.desapilar())
-            
-
                 
                 
                 
